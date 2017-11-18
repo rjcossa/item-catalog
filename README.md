@@ -31,7 +31,7 @@ In order to install this application you need to perform the following steps:
 * Add http://localhost:8000 to the Authorized Javascript origins and the the authorized redirect URIs
 * Download the client Secret
 * Rename the client secret to `client_secrets.json` and place it in the `/vagrant/catalog/` in the VM
-* Copy the Client ID and place it in the `/vagrant/catalog/templates/login.html` file
+* Copy the Client ID and place it in the `/vagrant/catalog/templates/login.html` file replacing `data-client-id`
 
 ### Adding Pixabay API Key
 
@@ -58,7 +58,7 @@ In order to run the application the following steps should be performed:
 #### Catalog Endpoint
 
 * Endpoint URI: http://localhost:8000/catalog/JSON
-* Function: Display all of the categories and the latst items
+* Function: Display all of the categories and the latest items
 
 #### Item View Endpoint
 
