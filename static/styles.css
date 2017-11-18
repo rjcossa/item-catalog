@@ -1,15 +1,13 @@
-.navbar-right {
-  font-size: 16px
-}
-
 body {
   background-color: #f7f7f7;
 }
+
+/* Styling the bootstrap grid  */
+
 .container {
   padding:50px;
   background-color: white
 }
-
 .catalog-content {
   margin-top: 15px
 }
@@ -18,12 +16,13 @@ body {
   margin-left: 0;
 }
 
-
-button.btn {
-  margin-top:20px
+/* Adding additional styles to the navbar */
+.navbar-right {
+  font-size: 16px
 }
 
 
+/* Styling the category name */
 
 span.category-name {
   color: #8c8585;
@@ -31,16 +30,19 @@ span.category-name {
   font-style: italic;
 }
 
+
+/* Styling form elements */
+
+button.btn {
+  margin-top:20px
+}
+
 label {
   font-size: 16px;
   margin-top: 15px;
 }
 
-a {
-  color: #ff1800;
-  font-weight: 500;
-  font-size:16px;
-}
+/* Styling the headers */
 
 .second-header {
   margin-top: 10px
@@ -54,26 +56,17 @@ a {
   -moz-border-radius: 50%;
 }
 
+/* Styling the item */
+
 .item-image {
   width: 330px;
   height:240px;
   margin-bottom:30px;
 }
-a:hover {
-  color:black;
-  text-decoration: none
-}
 
-@media (min-width: 992px) {
-  .border-between> [class*='col-']:before,
-  .border-between > [class*='col-']:after {
-      background: #e3e3e3;
-      bottom: 0;
-      content: " ";
-      position: absolute;
-      width: 1px;
-      top: 0;
-  }
+
+
+/* Styling the Login Picture shown once the user logs in */
 
   img#profile {
     width: 120px;
@@ -82,23 +75,46 @@ a:hover {
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
   }
+/* Styling the login Container Row */
 
+.login-container {
+    width:100%;
+    margin-top: 20px;
+}
+/* Styling the Anchor Tags */
+
+a {
+  color: #ff1800;
+  font-weight: 500;
+  font-size:16px;
+}
+
+a:hover {
+  color:black;
+  text-decoration: none
+}
+
+/* Styling Alerts */
 .alert {
   margin-bottom: 0px;
   border: none;
 }
-
-.login-container {
-  width:100%;
-  margin-top: 20px;
-}
-
 
 .alert-info {
   margin-top: 40px;
   margin-left: 0;
   margin-right: 0;
 }
+
+/* Class Style for Making elements Disappear */
+
+.invisible {
+  display: none;
+}
+
+/*
+  Login Animations
+*/
 
 #loginredirect {
   margin-top:20px;
@@ -108,9 +124,10 @@ a:hover {
   margin-top:60px;
   font-size: 17px;
 }
-.invisible {
-  display: none;
-}
+
+/*
+  Add Border Between The Category Column and the Item Column
+*/
 
 .border-between > [class*='col-']:before {
       left: 0;
@@ -123,3 +140,14 @@ a:hover {
       display: none;
 }
 }
+
+@media (min-width: 992px) {
+  .border-between> [class*='col-']:before,
+  .border-between > [class*='col-']:after {
+      background: #e3e3e3;
+      bottom: 0;
+      content: " ";
+      position: absolute;
+      width: 1px;
+      top: 0;
+  }

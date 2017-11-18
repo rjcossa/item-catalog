@@ -1,8 +1,10 @@
 $(function() {
-    $('.bouncing-links').hover(function(){ //Open on hover
+    /* Animating links on hover */
+
+    $('.bouncing-links').hover(function(){ //Animate on hover
         $(this).addClass('animated shake')
     },
-    function(){ //Close when not hovered
+    function(){ //Remove animation when mouse moves out
         $(this).removeClass('animated shake')
     });
 });
