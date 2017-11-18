@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+  <div class="row row-no-margin">
+       <div class="col-md-12">
+         <h3>{{item.name}}</h3>
+       </div>
+  </div>
+  <div class="row row-no-margin">
+      <div class="col-md-6">
+        <p>{{item.description}}</p>
+      </div>
+  </div>
+  <div class="row row-no-margin">
+    <div class="col-md-6">
+        <img class="item-image img-responsive" src="{{item.picture}}"/>
+    </div>
+  </div>
+</div>
+{% endblock %}

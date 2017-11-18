@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+    <div class="row row-no-margin">
+      <div class="col-md-12">
+      <h3>Add Item</h3>
+      </div>
+    </div>
+    <div class="row row-no-margin">
+      <form method="POST" action="{{url_for('addItem')}}?state={{STATE}}" >
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <label for="name">Name:</label>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <label for="description">Description:</label>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <label for="category_name">Category:</label>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+            <div class="col-md-6">
+              <select class="selectpicker" id="category_name" name="category_name">
+                  {% for category in categories %}
+                        <option>{{category.name}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+{% endblock %}

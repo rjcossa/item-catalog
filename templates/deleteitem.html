@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+    <div class="row row-no-margin">
+      <div class="col-md-12">
+      <h3>Delete Item Item</h3>
+      </div>
+    </div>
+    <div class="row row-no-margin">
+      <form method="POST" action="{{url_for('deleteItem', item_name=item.name)}}" >
+        <div class="row row-no-margin">
+          <div class="col-md-12">
+            <p> Are you sure you want to delete the item: {{item.name}}</p>
+          </div>
+        </div>
+        <div class="row row-no-margin">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div
+</div>
+{% endblock %}

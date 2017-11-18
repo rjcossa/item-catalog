@@ -1,0 +1,87 @@
+{% extends "main.html" %}
+{% block content %}
+
+<script src="//apis.google.com/js/platform.js?onload=start"> </script>
+
+<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+  <style>
+     img#profile {
+       width: 150;
+       height: 150px;
+       border-radius: 150px;
+       -webkit-border-radius: 150px;
+       -moz-border-radius: 150px;
+     }
+  </style>
+
+</head>
+
+
+
+<!-- GOOGLE PLUS SIGN IN BUTTON-->
+<div id="bouncingflash" class="row row-no-margin login-container invisible">
+  <div class="col-md-12">
+    <p class="animated bounce infinite">Please wait while we verify your login information...</p>
+  </div>
+</div>
+<div class="row row-no-margin login-container">
+    <div id="buttoncontainer" class="col-md-6 login-column">
+      <div class="row row-no-margin">
+        <p>In order to have access to all of the amazing services from this item catalog please sign in.</p>
+        <p>Please log in by clicking on the button below
+      </div>
+      <div class="row row-no-margin">
+        <div id="signinButton">
+              <span class="g-signin"
+                data-scope="openid email"
+                data-clientid="592305238567-35tk78r1ftpm279va36nkkt5g6p3e4mr.apps.googleusercontent.com"
+                data-redirecturi="postmessage"
+                data-accesstype="offline"
+                data-cookiepolicy="single_host_origin"
+                data-callback="signInCallback"
+                data-approvalprompt="force">
+              </span>
+          </div>
+     </div>
+    </div>
+
+    <div id="resultcontainer" class="col-md-6 login-column invisible">
+    <div id="result"></div>
+    </div>
+</div>
+
+<script>
+          function signInCallback(authResult) {
+            if (authResult['code']) {
+              // Hide the sign-in button now that the user is authorized
+              $('#signinButton').attr('style', 'display: none');
+              $('#buttoncontainer').addClass("invisible");
+              $('#bouncingflash').removeClass("invisible");
+              // Send the one-time-use code to the server, if the server responds, write a 'login successful' message to the web page and then redirect back to the main restaurants page
+              $.ajax({
+                type: 'POST',
+                url: '/oauth/google?state={{STATE}}',
+                processData: false,
+                data: authResult['code'],
+                contentType: 'application/octet-stream; charset=utf-8',
+                success: function(result) {
+                  // Handle or verify the server response if necessary.
+                  if (result) {
+                    $('#bouncingflash').addClass("invisible");
+                    $('#resultcontainer').removeClass("invisible")
+                    $('#result').html(result)
+                   setTimeout(function() {
+                    window.location.href = "/catalog";
+                   }, 4000);
+
+                } else if (authResult['error']) {
+              console.log('There was an error: ' + authResult['error']);
+            } else {
+                  $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+                   }
+                }
+
+            }); } }
+</script>
+{% endblock %}
+<!--END GOOGLE PLUS SIGN IN BUTTON -->
