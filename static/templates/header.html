@@ -1,9 +1,10 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Item Catalog</a>
+      <a class="navbar-brand" href="{{url_for('mainPage')}}">Item Catalog</a>
     </div>
     <ul class="nav navbar-nav">
+      <li><a href="{{url_for('mainPage')}}">Home</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       {% if 'username' not in session %}

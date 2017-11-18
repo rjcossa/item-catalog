@@ -53,6 +53,10 @@ In order to run the application the following steps should be performed:
 * Run the `itemgenerator.py` file to insert sample data to the DB
 * Run the `catalogOperations.py` file in order to start the web server
 
+## Accessing the APPLICATION_NAME
+
+In order to access the application point your favorite browser to http://localhost:8000
+
 ### Endpoints:
 
 #### Catalog Endpoint
