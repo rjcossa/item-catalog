@@ -1,4 +1,8 @@
 /* navbar */
+
+.navbar {
+  border: none
+}
 .navbar-default {
     background-color: #02b3e4;
     border-color: #E7E7E7;
